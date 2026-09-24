@@ -12,8 +12,8 @@ import 'package:provider/provider.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class ToolBarWidget extends StatelessWidget {
-  bool? showMore;
-  bool? showChangeTheme;
+  final bool? showMore;
+  final bool? showChangeTheme;
   final Widget? userInfoWidget;
 
   ToolBarWidget({super.key, this.showMore, this.showChangeTheme,this.userInfoWidget});

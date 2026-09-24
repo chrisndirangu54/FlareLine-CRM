@@ -276,12 +276,9 @@ class SignUpPage extends BlocBaseStlessWidget<SignUpViewModel, SignUpState> {
     );
   }
 
-  @override
   bool get isPage => true;
 
-  @override
   bool get showTitle => false;
 
-  @override
   bool get isAlignCenter => true;
 }

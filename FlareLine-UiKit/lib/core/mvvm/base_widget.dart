@@ -8,20 +8,18 @@ abstract class BaseWidget<VM extends BaseViewModel>
     extends StatelessWidget {
   final Map<String, dynamic>? params;
 
-  late VM _mViewMode;
-
   VM viewModelBuilder(BuildContext context);
 
   BaseWidget({this.params, super.key});
 
   @override
   Widget build(BuildContext context) {
-    _mViewMode = viewModelBuilder(context);
-    _mViewMode.setArgs(params);
-    _mViewMode.onViewCreated(context);
+    final mViewMode = viewModelBuilder(context);
+    mViewMode.setArgs(params);
+    mViewMode.onViewCreated(context);
 
     return ChangeNotifierProvider<VM>(
-        create: (context) => _mViewMode,
+        create: (context) => mViewMode,
         child: Consumer<VM>(
           builder: (context, viewModel, child) =>
               bodyWidget(context, viewModel, child),

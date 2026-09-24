@@ -23,7 +23,7 @@ class CircularhartWidget extends StatelessWidget {
     return _lineChart(context);
   }
 
-  ValueNotifier<int> selectedOption = ValueNotifier(1);
+  final ValueNotifier<int> selectedOption = ValueNotifier(1);
 
   _lineChart(BuildContext context) {
     return Padding(

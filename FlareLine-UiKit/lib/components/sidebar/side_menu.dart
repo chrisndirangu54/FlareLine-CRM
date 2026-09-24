@@ -6,10 +6,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:window_location_href/window_location_href.dart';
 
 class SideMenuWidget extends StatelessWidget {
-  dynamic e;
-  bool? isDark;
+  final dynamic e;
+  final bool? isDark;
 
-  ValueNotifier<String> expandedMenuName;
+  final ValueNotifier<String> expandedMenuName;
 
   SideMenuWidget({super.key, this.e, this.isDark, required this.expandedMenuName});
 
@@ -35,7 +35,7 @@ class SideMenuWidget extends StatelessWidget {
     String? routePath = ModalRoute
         .of(context)
         ?.settings
-        ?.name;
+        .name;
     return routePath == path;
   }
 
@@ -179,7 +179,7 @@ class SideMenuWidget extends StatelessWidget {
     String? routePath = ModalRoute
         .of(context)
         ?.settings
-        ?.name;
+        .name;
 
     if (path == routePath) {
       return;

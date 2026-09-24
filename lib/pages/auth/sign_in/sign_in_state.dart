@@ -1,11 +1,13 @@
 import 'package:flareline_uikit/core/mvvm/bloc/bloc_base_state.dart';
 
 class SignInState extends BlocBaseState {
-  String? userName = 'admin';
+  final String? userName;
 
-  String? password = '123456';
+  final String? password;
 
-  bool? loginStatus;
+  final bool? loginStatus;
+
+  SignInState({this.userName = 'admin', this.password = '123456', this.loginStatus});
 
   @override
   // TODO: implement props

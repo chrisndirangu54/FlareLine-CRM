@@ -11,7 +11,7 @@ class SelectWidget extends StatelessWidget {
   SelectWidget(
       {super.key, required this.selectionList, this.onDropdownChanged, this.textStyle});
 
-  ValueNotifier<String> countryNotifier = ValueNotifier('');
+  final ValueNotifier<String> countryNotifier = ValueNotifier('');
 
   @override
   Widget build(BuildContext context) {

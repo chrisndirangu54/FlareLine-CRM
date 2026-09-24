@@ -1,18 +1,32 @@
 import 'package:flareline_crm/pages/contacts/add_contact_page.dart';
 import 'package:flareline_crm/pages/crm_layout.dart';
-import 'package:flareline_uikit/components/buttons/button_widget.dart';
 import 'package:flareline_uikit/components/forms/search_widget.dart';
 import 'package:flareline_uikit/components/forms/select_widget.dart';
 import 'package:flareline_uikit/components/tables/table_widget.dart';
 import 'package:flareline_uikit/components/tags/tag_widget.dart';
 import 'package:flareline_uikit/entity/table_data_entity.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:donor_firebase/donor_firebase.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:responsive_builder/responsive_builder.dart';
 
 class ContactsPage extends CrmLayout {
   const ContactsPage({super.key});
+
+  @override
+  String breakTabTitle(BuildContext context) => 'Contacts';
+
+  @override
+  Widget contentDesktopWidget(BuildContext context) => const FirebaseDonorPanel(
+    title: 'Customers and leads', appId: 'crm', collection: 'contacts',
+    fields: {'name': 'Name', 'email': 'Email', 'phone': 'Phone', 'company': 'Company', 'status': 'Lead status'},
+  );
+}
+
+// Preserved as an upstream layout reference; the routed ContactsPage uses Firebase.
+class TemplateContactsPage extends CrmLayout {
+  const TemplateContactsPage({super.key});
 
   @override
   // TODO: implement isContentScroll

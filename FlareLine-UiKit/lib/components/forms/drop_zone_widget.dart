@@ -58,7 +58,7 @@ class DropZoneWidget extends StatelessWidget {
         FilePickerResult? file =
             await FilePicker.platform.pickFiles(allowMultiple: false);
         print('file ---- ${file?.files.single.name}');
-        if (file != null && file.files.single.name != null) {
+        if (file != null) {
           files.value.add(file.files.single.name);
         }
         _dragging.value = false;

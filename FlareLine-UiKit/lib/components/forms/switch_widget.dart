@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class SwitchWidget extends StatelessWidget {
   final bool? checked;
   final ValueChanged<bool>? onChanged;
-  late ValueNotifier<bool> toggleNotifier;
+  late final ValueNotifier<bool> toggleNotifier;
 
   SwitchWidget({super.key, this.checked, this.onChanged}) {
     toggleNotifier = ValueNotifier(checked ?? false);

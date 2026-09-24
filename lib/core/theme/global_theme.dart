@@ -16,7 +16,7 @@ class GlobalTheme {
       darkAppBarThemd, GlobalColors.darkText, darkCardTheme);
 
   static ThemeData theme(ColorScheme colorScheme, Color focusColor,
-      AppBarTheme appBarTheme, Color hintColor, CardTheme cardTheme) {
+      AppBarTheme appBarTheme, Color hintColor, CardThemeData cardTheme) {
     return ThemeData(
         useMaterial3: true,
         colorScheme: colorScheme,
@@ -27,13 +27,13 @@ class GlobalTheme {
         cardTheme: cardTheme);
   }
 
-  static CardTheme lightCardTheme = const CardTheme(
+  static CardThemeData lightCardTheme = const CardThemeData(
       margin: EdgeInsets.zero,
       color: Colors.white,
       surfaceTintColor: Colors.white,
       elevation: 0,);
 
-  static CardTheme darkCardTheme = const CardTheme(
+  static CardThemeData darkCardTheme = const CardThemeData(
     margin: EdgeInsets.zero,
     color: GlobalColors.darkAppBar,
     surfaceTintColor: GlobalColors.darkAppBar,

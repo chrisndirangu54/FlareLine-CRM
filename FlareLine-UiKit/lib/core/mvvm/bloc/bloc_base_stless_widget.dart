@@ -9,8 +9,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 abstract class BlocBaseStlessWidget<VM extends BlocBaseViewModel<ST>, ST extends BlocBaseState> extends StatelessWidget {
   final Map<String, dynamic>? params;
 
-  late VM _mViewMode;
-
   VM viewModelBuilder(BuildContext context);
 
   BlocBaseStlessWidget({this.params, super.key});
@@ -19,10 +17,10 @@ abstract class BlocBaseStlessWidget<VM extends BlocBaseViewModel<ST>, ST extends
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) {
-        _mViewMode = viewModelBuilder(context);
-        _mViewMode.setArgs(params);
-        _mViewMode.onViewCreated(context);
-        return _mViewMode;
+        final mViewMode = viewModelBuilder(context);
+        mViewMode.setArgs(params);
+        mViewMode.onViewCreated(context);
+        return mViewMode;
       },
       child: BlocBuilder<VM, ST>(
           buildWhen: (previous, current) => needBuild(previous, current),
